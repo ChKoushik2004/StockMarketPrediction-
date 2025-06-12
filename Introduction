@@ -1,1 +1,24 @@
-hi
+This project presents a comprehensive AI-driven framework for stock market prediction by combining time-series forecasting, financial risk analysis, and sentiment evaluation. 
+The primary goal is to provide intelligent and reliable Buy, Hold, or Sell investment recommendations using structured financial data and unstructured textual information. 
+The system was developed and tested on three major Indian companies listed on the National Stock Exchange: Reliance Industries, Tata Consultancy Services (TCS), and Infosys.
+At the core of the model lies a Long Short-Term Memory (LSTM) network that forecasts next-day stock prices using over a decade of historical data (2010–2024).
+The dataset includes technical indicators such as Moving Averages, RSI, MACD, and log returns.
+Data preprocessing involves cleaning, normalization (Min-Max scaling), and stationarity enforcement using the Augmented Dickey-Fuller test.
+The model achieved impressive prediction performance with R² scores between 0.85 and 0.92,
+showing its effectiveness in capturing both long- and short-term price trends, even during periods of high market volatility.
+Alongside price prediction, a Risk Management Module evaluates a company's financial health using five key indicators: 
+Debt-to-Equity Ratio, Current Ratio, Operating Margin, Beta, and ESG Score. These values are normalized and weighted to generate a composite risk score using a shallow neural model. 
+This module helps investors gauge the financial exposure and operational efficiency of a company. For example, Reliance exhibited medium risk,
+while TCS and Infosys showed higher risk scores due to market sensitivity and leverage levels.
+To incorporate public opinion and behavioral trends, a Sentiment Analysis Module processes text data from news headlines and Twitter posts. 
+The model, built using an LSTM-based NLP classifier, categorizes each document as having positive, neutral, or negative sentiment.
+Sentiment scores are averaged for each company and used to reflect market mood. TCS received the most positive sentiment, while Reliance and Infosys showed more neutral results, 
+revealing varied investor perceptions.
+The final stage of the pipeline integrates all three outputs — predicted price, financial risk, and sentiment — into a Decision-Making Deep Neural Network (DNN).
+This DNN uses ReLU activation in hidden layers and softmax at the output layer to classify investment decisions. 
+The system was trained on labeled investment outcomes and successfully delivered strategic decisions: 
+TCS was recommended as "Buy", whereas Reliance and Infosys were marked "Hold".
+Overall, this project proves the potential of combining deep learning, financial modeling, and sentiment analysis into a unified tool for financial forecasting and strategic stock decision-making. 
+It highlights how AI can transform investment analysis by integrating quantitative models with qualitative insights. The framework is scalable and can be expanded to include real-time data streaming, 
+attention mechanisms, hybrid LSTM-Transformer models, or reinforcement learning for automated trading strategies.
+
